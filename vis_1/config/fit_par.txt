@@ -1,7 +1,7 @@
 #parameter	fixed	tied	value		lo_lim	lo_val	hi_lim	hi_val
 per		True	True	1.21987089 	False	0.	False	0.
 t0		True	True	2454163.22367	False	0. 	False	0.
-t_secondary	True    True	2454163.8179031 True    2454163.2	True    3454163.91
+t_secondary	True   True	2454163.8157471 True    2454163.2	True    3454163.91
 w		True	True	90.		False	0.	False	0.
 a		True	True	3.65		False	14.	False	16.
 inc 		True	True	87.6		True	80.	True	90.
@@ -17,12 +17,12 @@ r1		False   True	30.5		True	10.	True	200.
 r2		False   True	6.0		True	3.	True	10.
 r3		False   True	-0.5		True	-3.	True	1.
 scale		False   True	0.0024		False	0.	False	0.
-a1		False   True	7.3e-4		True    5.0e-5	True    1.e-3
-omega1		False   True	119.3668336	True    100.	True    200.
-phi1		False   True	0.36698179	True.	0.      True    6.2831
+a1		False   True	7.3e-4		True    5.0e-5	True    3.e-3
+omega1		True    True	113.10526453	True    100.	True    200.
+phi1		True    True	1.68251729	True.	0.      True    6.2831
 a2		False   True	4.4e-4		True    1.0e-5	True    1.e-3
-omega2		False   True	95.38727164	True    50.	True    100.
-phi2		False   True	2.2428567	True.	0.      True    6.2831853
+omega2		True    True	103.53312686	True    50.	True    200.
+phi2		True   True	0.47566224	True.	0.      True    6.2831853
 trap_pop_s	True    True	1000.		True	0.	True	3.e3
 trap_pop_f	True    True	10.		True	0.	True	3.e3
 dTrap_s         True    True	146.0		True	0.	True    3.e2	
