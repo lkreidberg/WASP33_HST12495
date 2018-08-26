@@ -14,7 +14,8 @@ def weighted_mean(data, err):				#calculates the weighted mean for data points d
 	return [mu, np.sqrt(var)]				#returns weighted mean and variance
 
 #what bins do you want?
-wave_bins = np.linspace(1.125, 1.65, 22)*1e4
+#wave_bins = np.linspace(1.125, 1.65, 22)*1e4
+wave_bins = np.linspace(1.139, 1.631, 12)*1e4
 print wave_bins
 
 #reads in spectra
@@ -33,7 +34,9 @@ oversample_factor = len(w_hires)/len(w)*1.0
 
 #stores the indices corresponding to the wavelength range in each bin
 wave_inds = []
+lo_res_wave_inds = []
 for i in range(len(wave_bins)- 1): wave_inds.append((w_hires >= wave_bins[i])&(w_hires <= wave_bins[i+1]))
+for i in range(len(wave_bins)- 1): lo_res_wave_inds.append((w >= wave_bins[i])&(w <= wave_bins[i+1]))
 
 for i in range(len(wave_bins) - 1):
 	wave = (wave_bins[i] + wave_bins[i+1])/2./1.e4
@@ -59,6 +62,8 @@ for i in range(len(wave_bins) - 1):
 		meanflux, meanerr = weighted_mean(fluxes, errs)		
 
                 print>>outfile, phase, meanflux, meanerr**2, wave, 0., time, visnum, orbnum, scan
+                    
+                #print wave, np.sum(d[j, lo_res_wave_inds[i],2]) 
 
 
         #print wave, 1.0*sum(wave_inds)/len(w_hires), meanflux, meanerr
