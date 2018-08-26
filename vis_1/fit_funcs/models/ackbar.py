@@ -42,7 +42,7 @@ def ackbar(t, data, params):
     """
     trap_pop_s, trap_pop_f, dTrap_s, dTrap_f = params
 
-    cRates = 967.*np.ones_like(t)              #calculate this based on white light average (need to do better! FIXME) 
+    cRates = 1200.*np.ones_like(t)              #calculate this based on white light average (need to do better! FIXME) 
     tExp = (t - t[0])*24.*60.*60.
 
 

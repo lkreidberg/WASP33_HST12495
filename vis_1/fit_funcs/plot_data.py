@@ -54,7 +54,7 @@ def plot_fit(data, model):
 
     #add labels/set axes
     #xlo, xhi = np.min(model.phase)*0.9, np.max(model.phase)*1.1
-    xlo, xhi = 0.35, 0.57
+    xlo, xhi = 0.3, 0.57
     plt.xlim(xlo,xhi)
     plt.ylabel("Relative Flux")
 

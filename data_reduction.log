@@ -45,6 +45,14 @@ two visits agree reasonably well
 figured out why redchi2 values were too low! had incorrect number of data points
 due to bug in read_data.py (since we aren't using all the data)
 
+08/26/18
+visit 1:
+    made window smaller (50 pix), pretty good red chisq for white lc (rms = 152)
+    better than larger windows (rms = 200+)
+    30 pix window even better (rms = 142) ; 08_26_10_43
+    explored using ackbar instead of model ramp -- not great
+    20 pix window is wor se(rms = 167); 08_26_10_48
+
 TODO:
     get better white light curve fit for visit 2 
     try model ramp fit to spectroscopic light curves
