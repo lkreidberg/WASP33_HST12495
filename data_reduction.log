@@ -1,0 +1,53 @@
+07.10.18
+started data reduction
+downloaded horizons data
+picked region to estimate background
+
+07.11.18
+problem with offset -- need to account for POSTARG?
+in old analysis of Heather's HD 97658b data, in zero_extract.py I wrote:
+    "I AM SUBTRACTING 112 from the x coordinate in visit 0 to account 
+    for difference in CRPIX2 in the direct image vs. scan"   
+
+in WASP-33b data:
+direct image:   CRPIX1  =  143.0 / x-coordinate of reference pixel    
+grism:          CRPIX1  =  31.0 / x-coordinate of reference pixel
+
+subtract 122 from spectral position in zero_extract.py
+weird ... I get much better results if I subtract 112, rather than 122
+ maybe there are 5 reference pixels on either side that are/are not being counted?
+ I compared my wavelength solution with the G141 sensitivity curve, multiplied
+ by  a stellar blackbody spectrum. It looks good to ~10 Angstroms
+
+using offset of 112 for spectral direction direct image
+
+reduction:
+    window = 150; 07_11_10_45
+    window = 250; 07_11_10_52
+
+fitting first visit
+best rms, redchi2 is 221 ppm , 17.18 for:
+    myfuncs = ['constant', 'polynomial1', 'model_ramp', 'eclipse', 'sine2']
+
+
+fitting spectroscopic lc with divide white:
+    looks pretty good - some correlated noise. weird chi-square values
+        (seem too low in some cases)
+
+
+fit second visit
+    having trouble getting least squares to find true minimum
+    fixed fp on best fit from vis 1 white light (0.00140507) for divide white
+
+two visits agree reasonably well
+
+08/24/18
+figured out why redchi2 values were too low! had incorrect number of data points
+due to bug in read_data.py (since we aren't using all the data)
+
+TODO:
+    get better white light curve fit for visit 2 
+    try model ramp fit to spectroscopic light curves
+    compare spitzer eclipse depth
+    try joint fit of both visits
+
