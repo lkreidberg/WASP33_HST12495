@@ -52,10 +52,13 @@ visit 1:
     30 pix window even better (rms = 142) ; 08_26_10_43
     explored using ackbar instead of model ramp -- not great
     20 pix window is wor se(rms = 167); 08_26_10_48
+    tried model ramp fit to spectroscopic light curves - looks noisy
+    
+    tried to get better white light curve fit for visit 2  - moderate improvement
+    
 
 TODO:
-    get better white light curve fit for visit 2 
-    try model ramp fit to spectroscopic light curves
+    figure out if something is wrong with the ephemeris - the Zhang value is DIFFERENT
     compare spitzer eclipse depth
     try joint fit of both visits
 

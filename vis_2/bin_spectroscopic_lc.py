@@ -14,10 +14,10 @@ def weighted_mean(data, err):				#calculates the weighted mean for data points d
 	return [mu, np.sqrt(var)]				#returns weighted mean and variance
 
 #what bins do you want?
-wave_bins = np.linspace(1.15, 1.65, 11)*1e4
+wave_bins = np.linspace(1.125, 1.65, 21)*1e4
 
 #reads in spectra
-d = np.genfromtxt("extracted_lc/07_11_10_45/lc_spec.txt")
+d = np.genfromtxt("../vis_1/extracted_lc/08_26_10_43/lc_spec.txt")
 
 obs_par = make_dict(ascii.read("config/obs_par.txt", Reader=ascii.CommentedHeader))
 nexp = int(obs_par['nexp'])			#number of exposures
