@@ -57,7 +57,7 @@ class Data:
         
         #####################################
         #remove first orbit
-        norbit -= 1
+        """norbit -= 1
         ind = orb_num != 0
         orb_num = orb_num[ind] - 1.
         vis_num = vis_num[ind]
@@ -65,6 +65,18 @@ class Data:
         t_orb = t_orb[ind]
         t_delay = t_delay[ind]
         d = d[ind]
+
+        ind = orb_num != 4
+        orb_num = orb_num[ind]
+        vis_num = vis_num[ind]
+        t_vis = t_vis[ind]
+        t_orb = t_orb[ind]
+        t_delay = t_delay[ind]
+        d = d[ind]
+
+        ind = orb_num > 4
+        orb_num[ind] -= 1
+
         
         #USE ONLY FIRST VISIT!!!!
         ind = vis_num == 0 
@@ -74,7 +86,35 @@ class Data:
         t_vis = t_vis[ind]
         t_orb = t_orb[ind]
         t_delay = t_delay[ind]
+        nvisit -= 1"""
+
+        #USE ONLY SECOND VISIT:
+
+        #remove first orbit
+        norbit -= 1
+        ind = orb_num != 5
+        orb_num = orb_num[ind] - 6
+        vis_num = vis_num[ind]
+        t_vis = t_vis[ind]
+        t_orb = t_orb[ind]
+        t_delay = t_delay[ind]
+        d = d[ind]
+
+        
+        #USE ONLY second VISIT!!!!
+        ind = vis_num == 1
+        d = d[ind]
+        orb_num = orb_num[ind]
+        vis_num = vis_num[ind] - 1
+        t_vis = t_vis[ind]
+        t_vis -= t_vis[0]
+        t_orb = t_orb[ind]
+        t_delay = t_delay[ind]
         nvisit -= 1
+        #####################################
+
+
+
         #####################################
 
 

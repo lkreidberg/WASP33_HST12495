@@ -51,14 +51,23 @@ class Functions:
                     data.par_order['phi1']*data.nvisit,
                     data.par_order['a2']*data.nvisit,
                     data.par_order['omega2']*data.nvisit,
-                    data.par_order['phi2']*data.nvisit
+                    data.par_order['phi2']*data.nvisit,
+                    data.par_order['a12']*data.nvisit,
+                    data.par_order['omega12']*data.nvisit,
+                    data.par_order['phi12']*data.nvisit,
+                    data.par_order['a22']*data.nvisit,
+                    data.par_order['omega22']*data.nvisit,
+                    data.par_order['phi22']*data.nvisit
                 ]) 
             elif f == "model_ramp":
                 self.sys.append(model_ramp)
                 self.sys_porder.append([
                     data.par_order['r1']*data.nvisit,
                     data.par_order['r2']*data.nvisit,
-                    data.par_order['r3']*data.nvisit
+                    data.par_order['r3']*data.nvisit,
+                    data.par_order['r12']*data.nvisit,
+                    data.par_order['r22']*data.nvisit,
+                    data.par_order['r32']*data.nvisit
                 ]) 
             elif f == "ackbar":
                 self.sys.append(ackbar)

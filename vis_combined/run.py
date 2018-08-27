@@ -30,6 +30,7 @@ def usage():
 
 def main():
     myfuncs = ['constant', 'polynomial1', 'model_ramp', 'eclipse', 'sine2'] 
+    #myfuncs = ['constant', 'polynomial1', 'model_ramp', 'eclipse']
     #myfuncs = ['constant', 'divide_white', 'polynomial1', 'eclipse'] 
 
     #significance above which to mask outliers
