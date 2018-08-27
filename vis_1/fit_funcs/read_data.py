@@ -133,8 +133,6 @@ class Data:
         self.u1 = 0.
         self.u2 = 0.
 
-        print nvisit, vis_num, t_vis
-        print orb_num
         
         #FIXME
         self.white_systematics = np.genfromtxt("white_systematics.txt")
