@@ -40,6 +40,7 @@ def plot_fit(data, model):
 
     #calculate a range of times at higher resolution to make model look nice
     phase_hr = np.linspace(model.phase.min()-0.05, model.phase.max()+0.05, 1000)
+    print "per", p.per
     t_hr = phase_hr*p.per[0]+p.t0[0]
 
     #plot data

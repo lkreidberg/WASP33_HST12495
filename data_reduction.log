@@ -55,11 +55,27 @@ visit 1:
     tried model ramp fit to spectroscopic light curves - looks noisy
     
     tried to get better white light curve fit for visit 2  - moderate improvement
+
+08/27/18:
+fixed ephemeris to zhang value!
+got a good fit to visit 1 white light curve!! yay
+    model_ramp is much better than ackbar (170 vs 259 best fit rms)
+whoa - second sine term very degenerate with eclipse depth! put higher limit on omega
+got a decent fit with large omega - emission spectrum for 21 bins looks blackbodyish
     
+divide white looks reasonable. 21 bins has more than expected scatter around BB
+    11 bins looks fairly consistent with Haynes
+
+pretty good fit to visit 2 white lc (rms = 212)
+
+working on joint fit
+    existing fit_par.txt gave better fit to white lc from vis_1!! (rms = 142 vs 163)
+
+even better fit to visit 1! 134 ppm
+
+joint fit is problematic. redo tomorrow!!!!
 
 TODO:
-    figure out if something is wrong with the ephemeris - the Zhang value is DIFFERENT
-        off by like 25 minutes -- something is off with the fit
     try fitting harmonic instead of two independent frequencies for sine wave
     compare spitzer eclipse depth
     try joint fit of both visits
