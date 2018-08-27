@@ -45,7 +45,9 @@ def plot_fit(data, model):
     #plot data
     plt.subplot(211)
     #plot best fit model from first visit
-    plt.plot(phase_hr, calc_astro(t_hr, model.params, data, model.myfuncs, 0))
+    #plt.plot(phase_hr, calc_astro(t_hr, model.params, data, model.myfuncs, 0))
+    idx = data.vis_num == 0
+    plt.plot(model.phase, calc_astro(idx, model.params, data, model.myfuncs, 0))
 
     #plot systematics removed data
     for i in range(data.nvisit):
