@@ -65,6 +65,17 @@ class Data:
         t_orb = t_orb[ind]
         t_delay = t_delay[ind]
         d = d[ind]
+
+    
+        #remove second orbit
+        """norbit -= 1
+        ind = orb_num != 0
+        orb_num = orb_num[ind] - 1.
+        vis_num = vis_num[ind]
+        t_vis = t_vis[ind]
+        t_orb = t_orb[ind]
+        t_delay = t_delay[ind]
+        d = d[ind]"""
         
         #USE ONLY FIRST VISIT!!!!
         ind = vis_num == 0 
