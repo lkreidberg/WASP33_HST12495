@@ -1,7 +1,7 @@
 #parameter	fixed	tied	value		lo_lim	lo_val	hi_lim	hi_val
 per		True	True	1.21987089 	False	0.	False	0.
 t0		True	True	2454163.22367	False	0. 	False	0.
-t_secondary	True   True	2454163.8157471  True    2454163.2	True    3454163.91
+t_secondary	True    True	2454163.81528466  True    2454163.2	True    3454163.91
 w		True	True	90.		False	0.	False	0.
 a		True	True	3.65		False	14.	False	16.
 inc 		True	True	87.6		True	80.	True	90.

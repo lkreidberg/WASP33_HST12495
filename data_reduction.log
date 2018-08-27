@@ -59,6 +59,8 @@ visit 1:
 
 TODO:
     figure out if something is wrong with the ephemeris - the Zhang value is DIFFERENT
+        off by like 25 minutes -- something is off with the fit
+    try fitting harmonic instead of two independent frequencies for sine wave
     compare spitzer eclipse depth
     try joint fit of both visits
 
