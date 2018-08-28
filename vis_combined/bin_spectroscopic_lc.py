@@ -14,10 +14,12 @@ def weighted_mean(data, err):				#calculates the weighted mean for data points d
 	return [mu, np.sqrt(var)]				#returns weighted mean and variance
 
 #what bins do you want?
-wave_bins = np.linspace(1.15, 1.65, 11)*1e4
+#wave_bins = np.linspace(1.125, 1.65, 22)*1e4
+wave_bins = np.linspace(1.139, 1.631, 12)*1e4
+print wave_bins
 
 #reads in spectra
-d = np.genfromtxt("extracted_lc/07_11_10_45/lc_spec.txt")
+d = np.genfromtxt("extracted_lc/08_26_10_43/lc_spec.txt")
 
 obs_par = make_dict(ascii.read("config/obs_par.txt", Reader=ascii.CommentedHeader))
 nexp = int(obs_par['nexp'])			#number of exposures
@@ -32,7 +34,9 @@ oversample_factor = len(w_hires)/len(w)*1.0
 
 #stores the indices corresponding to the wavelength range in each bin
 wave_inds = []
+lo_res_wave_inds = []
 for i in range(len(wave_bins)- 1): wave_inds.append((w_hires >= wave_bins[i])&(w_hires <= wave_bins[i+1]))
+for i in range(len(wave_bins)- 1): lo_res_wave_inds.append((w >= wave_bins[i])&(w <= wave_bins[i+1]))
 
 for i in range(len(wave_bins) - 1):
 	wave = (wave_bins[i] + wave_bins[i+1])/2./1.e4
@@ -49,20 +53,20 @@ for i in range(len(wave_bins) - 1):
 
                 
                 #accounts for decrease in precision when spectrum is oversampled
-                #oversample_factor = sum(wave_inds[i])                  
                 variance_interp *= oversample_factor
+
 
 		fluxes = f_interp[wave_inds[i]]
 		errs = np.sqrt(variance_interp[wave_inds[i]])
             
 		meanflux, meanerr = weighted_mean(fluxes, errs)		
-                #print wave, sum(wave_inds[i]), oversample_factor, meanflux/meanerr**2
 
-		print>>outfile, phase, meanflux, meanerr**2, wave, 0., time, visnum, orbnum, scan
-		#print>>outfile, phase, meanflux, meanerr, wave, 0., time, visnum, orbnum, scan
-		#print>>outfile, time, '\t', meanflux, '\t', meanerr, '\t', visnum, '\t', orbnum, '\t', scan, '\t', wave, '\t\t', wave_bins[i]/1.e4, '\t\t', wave_bins[i+1]/1.e4
+                print>>outfile, phase, meanflux, meanerr**2, wave, 0., time, visnum, orbnum, scan
+                    
+                #print wave, np.sum(d[j, lo_res_wave_inds[i],2]) 
 
 
+        #print wave, 1.0*sum(wave_inds)/len(w_hires), meanflux, meanerr
 
 plt.plot(w_hires, f_interp)
 for wave in wave_bins: plt.axvline(wave, color = '0.5')

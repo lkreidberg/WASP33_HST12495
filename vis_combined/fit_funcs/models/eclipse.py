@@ -1,7 +1,6 @@
 import batman
 
-def eclipse(idx, data, params):
-        t = data.time[idx]
+def eclipse(t, data, params):
 	p = batman.TransitParams()
 
         t_secondary, per, rp, fp, a, inc, ecc, w = params

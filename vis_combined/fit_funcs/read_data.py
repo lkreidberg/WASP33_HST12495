@@ -57,7 +57,7 @@ class Data:
         
         #####################################
         #remove first orbit
-        """norbit -= 1
+        norbit -= 1
         ind = orb_num != 0
         orb_num = orb_num[ind] - 1.
         vis_num = vis_num[ind]
@@ -79,7 +79,7 @@ class Data:
 
         
         #USE ONLY FIRST VISIT!!!!
-        ind = vis_num == 0 
+        """ind = vis_num == 0 
         d = d[ind]
         orb_num = orb_num[ind]
         vis_num = vis_num[ind]
@@ -91,7 +91,7 @@ class Data:
         #USE ONLY SECOND VISIT:
 
         #remove first orbit
-        norbit -= 1
+        """norbit -= 1
         ind = orb_num != 5
         orb_num = orb_num[ind] - 6
         vis_num = vis_num[ind]
@@ -110,11 +110,7 @@ class Data:
         t_vis -= t_vis[0]
         t_orb = t_orb[ind]
         t_delay = t_delay[ind]
-        nvisit -= 1
-        #####################################
-
-
-
+        nvisit -= 1"""
         #####################################
 
 
@@ -167,11 +163,15 @@ class Data:
         self.par_order = par_order
         self.nfree_param = nfree_param
         self.npoints = len(self.time)
-        self.dof = self.npoints - nfree_param 
+        self.dof = self.npoints  - nfree_param 
         self.lc_type = obs_par['lc_type']
         self.all_sys = None
         self.u1 = 0.
         self.u2 = 0.
+
+        self.vis_idx = []
+        for i in range(nvisit - 1): self.vis_idx.append[self.vis_num == i]
+
         
         #FIXME
         self.white_systematics = np.genfromtxt("white_systematics.txt")
