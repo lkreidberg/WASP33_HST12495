@@ -15,7 +15,8 @@ def weighted_mean(data, err):				#calculates the weighted mean for data points d
 
 #what bins do you want?
 #wave_bins = np.linspace(1.125, 1.65, 22)*1e4
-wave_bins = np.linspace(1.139, 1.631, 12)*1e4
+#wave_bins = np.linspace(1.139, 1.631, 12)*1e4
+wave_bins = np.array([11400, 11800, 12200,12600,13000, 13400, 13800, 14200, 14600, 15000, 15400, 15800, 16200])
 print wave_bins
 
 #reads in spectra
