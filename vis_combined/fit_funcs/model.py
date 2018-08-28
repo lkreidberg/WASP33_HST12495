@@ -9,8 +9,8 @@ def calc_astro(t, params, data, funcs, visit):
     flux = np.ones_like(t)
     for i, f in enumerate(funcs.astro): 
         #selects parameters to pass to function
-        funcparams = [params[j:j + visit] for j in funcs.astro_porder[i]]
-        flux *= f(t, data, funcparams, visit, multi = True)
+        funcparams = [params[j:j + data.nvisit] for j in funcs.astro_porder[i]]
+        flux *= f(t, data, funcparams, visit) 
 
     return flux 
 
@@ -19,8 +19,8 @@ def calc_sys(t, params, data, funcs, visit):
     flux = np.ones_like(t)
     for i, f in enumerate(funcs.sys): 
         #selects parameters to pass to function
-        funcparams = [params[j: j + visit] for j in funcs.sys_porder[i]]
-        flux *= f(t, data, funcparams, visit, multi = True) 
+        funcparams = [params[j: j + data.nvisit] for j in funcs.sys_porder[i]]
+        flux *= f(t, data, funcparams, visit) 
 
     return flux 
 
@@ -55,12 +55,13 @@ class Model:
             #FIXME don't do this every time fit is run
             ind = data.vis_num == visit     
 
-            t = data.time[ind]
+            #t = data.time[ind]
+            t = data.time
             per  = params[data.par_order['per'] + visit]
             t0  = params[data.par_order['t0'] + visit]
-            self.phase[ind] = (t - t0)/per - np.floor((t - t0)/per)
-            self.model_sys[ind] = calc_sys(t, params, data, self.myfuncs, visit)
-            self.model_astro[ind] = calc_astro(t, params, data, self.myfuncs, visit)
+            self.phase[ind] = (t[ind] - t0)/per - np.floor((t[ind] - t0)/per)
+            self.model_sys[ind] = calc_sys(t[ind], params, data, self.myfuncs, visit)
+            self.model_astro[ind] = calc_astro(t[ind], params, data, self.myfuncs, visit)
 
         self.params = params
         self.model = self.model_sys*self.model_astro

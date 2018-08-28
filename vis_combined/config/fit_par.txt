@@ -10,8 +10,8 @@ fp		False   True    0.001		True	0.0001	True    0.0025
 u1		True	True	0.3		True	0.	True	1.0
 u2		True	True	0.		False	0.	False	0.
 ecc		True	True	0.		False	0.	False	0.
-c		False	True    8.22774730e+08	False	0.	False	0.
-v		False   True    0.002		False	0.	False	0.
+c		False	False   8.22774730e+08	False	0.	False	0.
+v		False   False   -0.002		False	0.	False	0.
 v2		True    True	0.001		False	0.	False	0.
 r1		False   True	30.5		True	1.	True	500.
 r2		False   True	6.0		True	3.	True	10.

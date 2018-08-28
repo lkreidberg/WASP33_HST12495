@@ -3,7 +3,10 @@ sys.path.insert(0,'..')
 from read_data import Data
 import numpy as np
 
-def polynomial1(t, data, params):
+def polynomial1(t, data, params, visit = 0):
     v = params
-    #FIXME data.t_vis won't work if there are multiple visits
-    return 1. + v*data.t_vis
+    v = v[0][visit]
+
+    t_vis = data.t_vis[data.vis_idx[visit]]
+
+    return 1. + v*t_vis

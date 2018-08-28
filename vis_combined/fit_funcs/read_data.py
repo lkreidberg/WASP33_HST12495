@@ -170,8 +170,7 @@ class Data:
         self.u2 = 0.
 
         self.vis_idx = []
-        for i in range(nvisit - 1): self.vis_idx.append[self.vis_num == i]
+        for i in range(nvisit): self.vis_idx.append(self.vis_num == i)
 
-        
         #FIXME
         self.white_systematics = np.genfromtxt("white_systematics.txt")

@@ -3,13 +3,8 @@ sys.path.insert(0,'..')
 import numpy as np
 from read_data import Data
 
-def constant(t, data, params, visit = 0, multi = True):
+def constant(t, data, params, visit = 0):
     C = params
-    C = C[visit]
-    
-    if multi:
-        tt = t[data.vis_idx[visit]]
-    else:
-        tt = t
+    C = C[0][visit]
 
-    return 1. + C*np.ones_like(tt)
+    return 1. + C*np.ones_like(t)
