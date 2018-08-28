@@ -42,6 +42,8 @@ def plot_fit(data, model):
     phase_hr = np.linspace(model.phase.min()-0.05, model.phase.max()+0.05, 1000)
     t_hr = phase_hr*p.per[0]+p.t0[0]
 
+    colors = ['blue', 'red']
+
     #plot data
     plt.subplot(211)
     #plot best fit model from first visit
@@ -50,11 +52,11 @@ def plot_fit(data, model):
     #plot systematics removed data
     for i in range(data.nvisit):
         ind = data.vis_num == i
-        plt.plot(model.phase[ind], model.data_nosys[ind], color = 'b', marker = 'o', markersize = 3, linestyle = "none") 
+        plt.plot(model.phase[ind], model.data_nosys[ind], color = colors[i], marker = 'o', markersize = 3, linestyle = "none") 
 
     #add labels/set axes
     #xlo, xhi = np.min(model.phase)*0.9, np.max(model.phase)*1.1
-    xlo, xhi = 0.3, 0.57
+    xlo, xhi = 0.35, 0.6
     plt.xlim(xlo,xhi)
     plt.ylabel("Relative Flux")
 
@@ -74,7 +76,7 @@ def plot_fit(data, model):
 
     for i in range(data.nvisit):
         ind = data.vis_num == i
-        plt.plot(model.phase[ind], 1.0e6*model.norm_resid[ind], color = 'b', marker = 'o', markersize = 3, linestyle = "none")
+        plt.plot(model.phase[ind], 1.0e6*model.norm_resid[ind], color = colors[i], marker = 'o', markersize = 3, linestyle = "none")
 
     #add labels/set axes
     plt.xlim(xlo,xhi)

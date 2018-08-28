@@ -66,6 +66,7 @@ class Data:
         t_delay = t_delay[ind]
         d = d[ind]
 
+        norbit -= 1
         ind = orb_num != 4
         orb_num = orb_num[ind]
         vis_num = vis_num[ind]
@@ -115,6 +116,9 @@ class Data:
 
 
         ind = orb_num == 0              #FIXME don't set by hand
+        t_delay[ind] = 1.
+
+        ind = orb_num == 4              #FIXME don't set by hand
         t_delay[ind] = 1.
 
         err = np.sqrt(d[:,2])

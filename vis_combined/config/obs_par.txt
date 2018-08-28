@@ -1,6 +1,6 @@
 #parameter			value
 nvisit				2
-norb				5
+norb			        10	
 GRISM				G141
 FILTER				F139M
 exp_time 			51.703

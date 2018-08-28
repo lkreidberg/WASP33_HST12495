@@ -1,9 +1,17 @@
 import batman
 
-def eclipse(t, data, params):
+def eclipse(t, data, params, visit = 0.):
 	p = batman.TransitParams()
 
         t_secondary, per, rp, fp, a, inc, ecc, w = params
+        t_secondary = t_secondary[visit]
+        per = per[visit]
+        rp = rp[visit]
+        fp = fp[visit]
+        a = a[visit]
+        inc = inc[visit]
+        ecc = ecc[visit]
+        w = w[visit]
 
 	p.t_secondary = t_secondary
 	p.per = per
