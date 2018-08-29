@@ -83,6 +83,7 @@ def plot_fit(data, model):
     plt.ylabel("Residuals (ppm)")
     plt.xlabel("Orbital phase")
     
+    plt.savefig("white_lc.pdf")
     plt.show()
 
 
