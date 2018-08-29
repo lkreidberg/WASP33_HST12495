@@ -75,8 +75,20 @@ even better fit to visit 1! 134 ppm
 
 joint fit is problematic. redo tomorrow!!!!
 
+08/28/18:
+---------
+redoing joint fit code
+as a start, fit first visit with eclipse ephemeris fixed on Zhang et al value
+    got very good rms (143 ppm)
+
+got a really good joint fit (rms = 159) !!!
+
+fit spectroscopic light curves -- looks pretty blackbody!
+
+experimented with spectral binning to skip Paschen beta
+
 TODO:
+    run MCMC for spectroscopic light curves 
     try fitting harmonic instead of two independent frequencies for sine wave
     compare spitzer eclipse depth
-    try joint fit of both visits
 
