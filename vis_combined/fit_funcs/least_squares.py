@@ -2,6 +2,7 @@ import numpy as np
 import mpfit
 from plot_data import plot_raw, plot_fit
 from formatter import PrintParams
+import pickle
 
 def residuals(params, data, model, fjac=None):			
     fit = model.fit(data, params)
@@ -69,10 +70,11 @@ def lsq_fit(fit_par, data, flags, model, myfuncs):
                   "{0:0.3f}".format(m.params[data.par_order['u2']*nvisit]),\
                   "{0:0.2f}".format(model.chi2red)
                    
-        #pickle.dump([data, model], open("white_lc_fit.p", "wb"))
+        pickle.dump([data, model], open("white_lc_fit.p", "wb"))
+        #pickle.dump([data, model], open("lsq_fit_" + "{0:0.4f}".format(data.wavelength)+".p", "wb"))
         f.close()
 
-
+                                                                                                                                                                                                      
     if flags['verbose']: 
         #print "{0:0.3f}".format(data.wavelength), "{0:0.2f}".format(bestfit.chi2red)
         #print data.wavelength, "{0:0.3f}".format(m.params[data.par_order['A1']*nvisit])
@@ -81,4 +83,4 @@ def lsq_fit(fit_par, data, flags, model, myfuncs):
     if flags['show-plot']: plot_fit(data, model)
 
     #model = Model(data , myfuncs)
-    return  data, model
+    return  data, model, m.params

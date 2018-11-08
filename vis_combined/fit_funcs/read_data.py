@@ -9,6 +9,20 @@ class Data:
         fit_par
     """
     def __init__(self, data_file, obs_par, fit_par):
+        def format_prior_for_mcmc(self, obs_par, fit_par):
+                nvisit = int(obs_par['nvisit'])				
+                prior = []
+
+                for i in range(len(fit_par)):
+                    if fit_par['fixed'][i].lower() == "false":
+                        if fit_par['tied'][i].lower() == "true": 
+                            prior.append([fit_par['prior'][i], float(fit_par['p1'][i]), 
+                                float(fit_par['p2'][i])])
+                        else: 
+                            for j in range(nvisit): 
+                                prior.append([fit_par['prior'][i], float(fit_par['p1'][i]), 
+                                    float(fit_par['p2'][i])])
+                return prior
 
 	#read in data and sort by time
 	d = np.genfromtxt(data_file)
@@ -172,6 +186,8 @@ class Data:
         self.all_sys = None
         self.u1 = 0.
         self.u2 = 0.
+
+        self.prior = format_prior_for_mcmc(self, obs_par, fit_par)
 
         self.vis_idx = []
         for i in range(nvisit): self.vis_idx.append(self.vis_num == i)

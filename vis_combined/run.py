@@ -10,6 +10,7 @@ import time as pythontime
 from read_data import Data
 from model import Model
 from least_squares import lsq_fit
+from mcmc import mcmc_fit
                     
 def usage():
     cmd = sys.argv[0]
@@ -90,23 +91,27 @@ def main():
     for f in files:
         data = Data(f, obs_par, fit_par)
         model = Model(data, myfuncs)
-        data, model = lsq_fit(fit_par, data, flags, model, myfuncs)
+        data, model, params = lsq_fit(fit_par, data, flags, model, myfuncs)
+
+        """ind = model.resid/data.err > 10.
+        print "num outliers", sum(ind)
+        data.err[ind] = 1e12
+        data, model = lsq_fit(fit_par, data, flags, model, myfuncs)"""
     
         ##rescale error bars so reduced chi-squared is one
         #data, model = lsq_fit(fit_par, data, flags, model, myfuncs)
+        data.err *= np.sqrt(model.chi2red)                                      
+        data, model, params = lsq_fit(fit_par, data, flags, model, myfuncs)
+        if flags['verbose'] == True: print "rms, chi2red = ", model.rms, model.chi2red
         
 
         #FIXME : make this automatic!
         """outfile = open("white_systematics.txt", "w")
         for i in range(len(model.all_sys)): print>>outfile, model.all_sys[i]
         outfile.close()"""
-
-        if flags['run-mcmc']:
-            output = mcmc_fit(f, obs_par, fit_par, flags)
-            for i in range(len(output)): 
-                    temp = "mcmc_out_"+'{0:0.2f}'.format(output[i][0])
-                    np.save(temp, output[i][3])
                             
+        if flags['run-mcmc']:
+            output = mcmc_fit(data, model, params, f, obs_par, fit_par)     
 
 if __name__ == '__main__':
     main()
