@@ -51,7 +51,10 @@ class Functions:
                     data.par_order['phi1']*data.nvisit,
                     data.par_order['a2']*data.nvisit,
                     data.par_order['omega2']*data.nvisit,
-                    data.par_order['phi2']*data.nvisit
+                    data.par_order['phi2']*data.nvisit,
+                    data.par_order['a3']*data.nvisit,
+                    data.par_order['omega3']*data.nvisit,
+                    data.par_order['phi3']*data.nvisit
                 ]) 
             elif f == "model_ramp":
                 self.sys.append(model_ramp)

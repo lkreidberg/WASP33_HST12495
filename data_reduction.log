@@ -87,8 +87,15 @@ fit spectroscopic light curves -- looks pretty blackbody!
 
 experimented with spectral binning to skip Paschen beta
 
-TODO:
-    run MCMC for spectroscopic light curves 
-    try fitting harmonic instead of two independent frequencies for sine wave
+11/07/18:
+---------
+changed stellar pulsation model to sum of sinusoids rather than product
+get excellent results for three sinusoids
+need different periods for the two visits
+get great fit! combined rms = 109
+    white light mcmc, fixed sinusoids on best fit: rp/rs = 0.00131124293182 +/- 2.27249551037e-05
+    white light mcmc, variable amps: rp/rs = 0.00131122170031 +/- 2.39438262643e-05 
+trying white light mcmc -- it's hard! degenerate parameters cause convergence problems
+
     compare spitzer eclipse depth
 
