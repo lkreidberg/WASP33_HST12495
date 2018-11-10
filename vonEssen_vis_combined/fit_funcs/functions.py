@@ -11,6 +11,7 @@ from eclipse import eclipse
 from model_ramp import model_ramp
 from divide_white import divide_white
 from ackbar import ackbar
+from vonessen import vonessen
 
 #need to automate appending parameters to functions
 class Functions:
@@ -64,6 +65,35 @@ class Functions:
                     data.par_order['a32']*data.nvisit,
                     data.par_order['omega32']*data.nvisit,
                     data.par_order['phi32']*data.nvisit
+                ]) 
+            elif f == "vonessen":
+                self.sys.append(vonessen)
+                self.sys_porder.append([
+                    data.par_order['scale']*data.nvisit,
+                    data.par_order['a1']*data.nvisit,
+                    data.par_order['a2']*data.nvisit,
+                    data.par_order['a3']*data.nvisit,
+                    data.par_order['a4']*data.nvisit,
+                    data.par_order['a5']*data.nvisit,
+                    data.par_order['a6']*data.nvisit,
+                    data.par_order['a7']*data.nvisit,
+                    data.par_order['a8']*data.nvisit,
+                    data.par_order['p1']*data.nvisit,
+                    data.par_order['p2']*data.nvisit,
+                    data.par_order['p3']*data.nvisit,
+                    data.par_order['p4']*data.nvisit,
+                    data.par_order['p5']*data.nvisit,
+                    data.par_order['p6']*data.nvisit,
+                    data.par_order['p7']*data.nvisit,
+                    data.par_order['p8']*data.nvisit,
+                    data.par_order['q1']*data.nvisit,
+                    data.par_order['q2']*data.nvisit,
+                    data.par_order['q3']*data.nvisit,
+                    data.par_order['q4']*data.nvisit,
+                    data.par_order['q5']*data.nvisit,
+                    data.par_order['q6']*data.nvisit,
+                    data.par_order['q7']*data.nvisit,
+                    data.par_order['q8']*data.nvisit
                 ]) 
             elif f == "model_ramp":
                 self.sys.append(model_ramp)
