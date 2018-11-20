@@ -97,5 +97,9 @@ get great fit! combined rms = 109
     white light mcmc, variable amps: rp/rs = 0.00131122170031 +/- 2.39438262643e-05 
 trying white light mcmc -- it's hard! degenerate parameters cause convergence problems
 
+
+11/10/18:
+tried fixing frequencies on von Essen values. need to vary amps and phases, --> overfitting!
+
     compare spitzer eclipse depth
 
