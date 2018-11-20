@@ -46,7 +46,7 @@ for m, l in zip(mcmc, lsq):
 
 plt.errorbar(np.array(waves), np.array(ys), yerr = np.array(yes), fmt = '.k')
 plt.ylim(0, 2.e-3)
-plt.show()
+#plt.show()
 
 
 
