@@ -103,3 +103,9 @@ tried fixing frequencies on von Essen values. need to vary amps and phases, --> 
 
     compare spitzer eclipse depth
 
+11/21/18:
+    latest working fit: keeping common sinusoid frequencies between two visits
+                        sinusoids are parameterized as a1*cos(omega1*t) + b1*sin(omega1*t)
+        reparam_vis_combined_common_sines
+    trying to fit full data (including first visit)
+        struggling with both ackbar and model_ramp!!!

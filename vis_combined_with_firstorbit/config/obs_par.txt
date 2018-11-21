@@ -1,0 +1,44 @@
+#parameter			value
+nvisit				2
+norb			        10	
+GRISM				G141
+FILTER				F139M
+exp_time 			51.703
+path			 	/Users/lkreidberg/Desktop/Data/WASP33_HST12495
+nexp				214
+###
+direct_image_diagnostics	False
+direct_image_output		True
+di_rmin				128
+di_rmax				158
+di_cmin 			128	
+di_cmax				158
+###			
+sig_cut				15.
+nsmooth				13
+diagnostics			False
+output			        True
+opt_extract			True
+correct_wave_shift	 	True
+plot_trace			False
+plot_spectrum 			False
+one_di_per_visit		False
+rmin				6
+rmax				250
+cmin				6
+cmax				250
+offset				0
+rdnoise				22.0
+window				20
+###				
+BEAMA_i				15
+BEAMA_f				196
+flat				config/WFC3.IR.G141.flat.2.fits
+###		
+lc_type			  	eclipse
+skip_orbs_phase_curve		0_
+skip_orbs_eclipse		0_
+skip_orbs_transit		0_
+###
+ld_file				LD_coefficients/W107_10bins_G102.dat
+fix_ld				False

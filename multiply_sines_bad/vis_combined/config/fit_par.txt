@@ -1,0 +1,39 @@
+#parameter	fixed	tied	value		lo_lim	lo_val	hi_lim	hi_val
+per		True	True	1.21987089 	False	0.	False	0.
+t0		True	True	2454163.22367	False	0. 	False	0.
+t_secondary     True    True    2454163.830898 True    2454163.82       True    3454163.84
+w		True	True	90.		False	0.	False	0.
+a		True	True	3.65		False	14.	False	16.
+inc 		True	True	87.6		True	80.	True	90.
+rp		True    True	0.103		True	0.04	True	0.2
+fp		False   True    0.001		True	0.0001	True    0.0025
+u1		True	True	0.3		True	0.	True	1.0
+u2		True	True	0.		False	0.	False	0.
+ecc		True	True	0.		False	0.	False	0.
+c		False	False   8.22774730e+08	False	0.	False	0.
+v		False   False   -0.002		False	0.	False	0.
+v2		True    True	0.001		False	0.	False	0.
+r1		False   False   3.5		True	1.	True	300.
+r2		False   False   6.0		True	3.	True	10.
+r3		False   False   -0.5		True	-3.	True	1.
+scale		False   True	0.0024		False	0.	False	0.
+a1		False   True      0.00062201	True    1.0e-4	True    2.e-3
+omega1		False   True    121.34963798 	True    120.	True    130.
+phi1		False   True    0.1         	True.	0.      True   6.28
+a2		False   True   0.00040573	True    1.0e-4	True    1.e-3
+omega2		False   True   49.15    	True    40.	True    55.
+phi2		False   True   2.157     	True.	0.      True    6.2831853
+a12		False   True    0.00075186	True    1.0e-4	True    2.e-3
+omega12		False   True    127.3   	True    120.	True    130.
+phi12		False   True    5.28    	True.	3.14      True    9.42
+a22		False   True    0.0010978	True    1.0e-4	True    2.e-3
+omega22		False   True    74.41   	True    60.	True    80.
+phi22		False   True    5.30    	True.	0.      True    6.2831853
+trap_pop_s	True    True	1000.		True	0.	True	3.e3
+trap_pop_f	True    True	10.		True	0.	True	3.e3
+dTrap_s         True    True	146.0		True	0.	True    3.e2	
+dTrap_f         True    True	80.0     	True	0.	True    3.e2
+
+
+
+
